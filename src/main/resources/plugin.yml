@@ -1,0 +1,6 @@
+name: G-Chat
+version: '${project.version}'
+main: me.filipe.gchat.GChat
+api-version: 1.19
+authors: [ GamerExxtreme ]
+description: Simple chat plugin with various features.

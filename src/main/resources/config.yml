@@ -1,0 +1,28 @@
+gchat:
+  prefix: "&#fb0000[&#f73502M&#f46b044&#f0a006s&#ecd508t&#c8dc06e&#a4e304r&#7fe902C&#5bf000r&#80ca0da&#a6a41af&#cb7e26t&#f05833] "
+  messages:
+    console: "%prefix% Apenas players"
+    no-perms: "%prefix% &cSem permissão."
+    rl: "%prefix% &aConfig recarregada!"
+    invalid: "%prefix% &cUso correto: &c&l/gchat reload"
+    
+localchat:
+  adm-space: true
+  range: 150
+  prefix: "&e[L] %player%&e: %message%"
+  
+globalchat:
+  adm-space: true
+  prefix: "&7[G] %player%&7: %message%"
+  
+  #Se precisa de dinheiro para falar no global
+  #
+  # Por implementar
+  #
+  #needs-min: false
+  #min-qt: 50
+  
+broadcast:
+  permission: "g.utils.staff"
+  prefix: "&#fb0000[&#f73502M&#f46b044&#f0a006s&#ecd508t&#c8dc06e&#a4e304r&#7fe902C&#5bf000r&#80ca0da&#a6a41af&#cb7e26t&#f05833] "
+  space: true
