@@ -1,19 +1,41 @@
 gchat:
-  prefix: "&#fb0000[&#f73502M&#f46b044&#f0a006s&#ecd508t&#c8dc06e&#a4e304r&#7fe902C&#5bf000r&#80ca0da&#a6a41af&#cb7e26t&#f05833] "
+  prefix: "&x&f&b&0&0&0&0&l[&x&f&b&1&3&0&5&lM&x&f&c&2&5&0&a&l4&x&f&c&3&8&1&0&ls&x&f&c&4&a&1&5&lt&x&f&d&5&d&1&a&le&x&f&d&6&f&1&f&lr&x&f&d&8&5&1&a&lC&x&f&e&9&c&1&5&lr&x&f&e&b&2&1&0&la&x&f&e&c&8&0&a&lf&x&f&f&d&f&0&5&lt&x&f&f&f&5&0&0&l]"
+  permission: "gchat.reload"
   messages:
-    console: "%prefix% Apenas players"
-    no-perms: "%prefix% &cSem permissão."
-    rl: "%prefix% &aConfig recarregada!"
-    invalid: "%prefix% &cUso correto: &c&l/gchat reload"
-    
+    console: "Apenas players"
+    no-perms: "&cSem permissão."
+    rl: "&aConfig recarregada!"
+    invalid: "&cUso correto: &c&l/gchat reload"
+    invalidpm: "&cUso correto: &c&l/tell <jogador> <mensagem>"
+    offline: "&cEsse jogador não existe ou está offline."
+    itself: "&cNão podes enviar mensagem a ti mesmo."
+
+welcome:
+  - ""
+  - "&eOlá %player%"
+  - "&bBem Vindo ao %prefix%"
+  - "&dEspero que te divirtas!"
+  - ""
+
+disabled-msg:
+  local: "&cTens o chat local desativado."
+  global: "&cTens o chat global desativado."
+  tell: "&cTens o tell desativado."
+  tell-other: "&cO %player% tem o tell desativado."
+  chatg: "&cO chat global está desativado."
+  chatl: "&cO chat local está desativado."
+
 localchat:
+  radius: 50
   adm-space: true
-  range: 150
-  prefix: "&e[L] %player%&e: %message%"
-  
+  prefix: "&e[L] %player% &e» "
+  no-one: "&cNinguém por perto :("
+  use: "&cUso correto: /l <mensagem>"
+
 globalchat:
   adm-space: true
-  prefix: "&7[G] %player%&7: %message%"
+  prefix: "&7[G] %player% &7» "
+  use: "&cUso correto: /g <mensagem>"
   
   #Se precisa de dinheiro para falar no global
   #
@@ -22,7 +44,25 @@ globalchat:
   #needs-min: false
   #min-qt: 50
   
+pmchat:
+  prefix-sender: "&d[tu -> %receiver%]: "
+  prefix-receiver: "&d[%sender% -> tu]: "
+  sound: true
+
+staffchat:
+  prefix: "&a[STAFF] %player% &a» "
+  enabled: true
+  use: "&cUso correto: /s <mensagem>"
+  
 broadcast:
   permission: "g.utils.staff"
-  prefix: "&#fb0000[&#f73502M&#f46b044&#f0a006s&#ecd508t&#c8dc06e&#a4e304r&#7fe902C&#5bf000r&#80ca0da&#a6a41af&#cb7e26t&#f05833] "
+  prefix: "&x&f&b&0&0&0&0&l[&x&f&b&1&3&0&5&lM&x&f&c&2&5&0&a&l4&x&f&c&3&8&1&0&ls&x&f&c&4&a&1&5&lt&x&f&d&5&d&1&a&le&x&f&d&6&f&1&f&lr&x&f&d&8&5&1&a&lC&x&f&e&9&c&1&5&lr&x&f&e&b&2&1&0&la&x&f&e&c&8&0&a&lf&x&f&f&d&f&0&5&lt&x&f&f&f&5&0&0&l] "
   space: true
+  invalid-use: "&cUso correto: /broadcast <mensagem>"
+
+chatdisable:
+  invalid-use: "&cUso correto: /chatdisable <l/g>"
+  locald: "%prefix% O chat local foi desativado."
+  globald: "%prefix% O chat global foi desativado."
+  locale: "%prefix% O chat local foi ativado."
+  globale: "%prefix% O chat global foi ativado."

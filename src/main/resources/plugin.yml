@@ -4,3 +4,28 @@ main: me.filipe.gchat.GChat
 api-version: 1.19
 authors: [ GamerExxtreme ]
 description: Simple chat plugin with various features.
+
+commands:
+  gchat:
+    usage: /<command>
+
+  broadcast:
+    usage: /<command>
+
+  g:
+    usage: /<command>
+
+  l:
+    usage: /<command>
+
+  chatsettings:
+    usage: /<command>
+
+  s:
+    usage: /<command>
+
+  tell:
+    usage: /<command>
+
+  chatdisable:
+    usage: /<command>

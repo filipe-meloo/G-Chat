@@ -1,10 +1,13 @@
 package me.filipe.gchat;
 
+import me.filipe.gchat.automessages.AutoMessage;
+import me.filipe.gchat.commands.*;
 import me.filipe.gchat.data.Dados;
-import me.filipe.gchat.utils.Utils;
+import me.filipe.gchat.data.SettingsData;
+import me.filipe.gchat.events.OnChat;
+import me.filipe.gchat.events.PlayerLogin;
+import me.filipe.gchat.events.SettingsClickEvent;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class GChat extends JavaPlugin {
@@ -17,7 +20,24 @@ public final class GChat extends JavaPlugin {
         this.saveDefaultConfig();
         this.data = new Dados(this);
 
+        SettingsData.loadOnline(this);
 
+        new GChatCommand(this);
+
+        new OnChat(this);
+        new ChatCommand(this);
+        new StaffCommand(this);
+        new TellCommand(this);
+        new BroadcastCommand(this);
+
+        new PlayerLogin(this);
+
+        new ChatSettingsCommand(this);
+        new SettingsClickEvent(this);
+
+        new DisableChatCommand(this);
+
+        new AutoMessage(this);
 
         Bukkit.getConsoleSender().sendMessage("G-Chat On.");
     }
@@ -25,32 +45,9 @@ public final class GChat extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        SettingsData.saveToConfig(this);
+
         Bukkit.getConsoleSender().sendMessage("G-Chat Off.");
-    }
-
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equalsIgnoreCase("ggamble")) {
-            if (!sender.hasPermission(getConfig().getString("ggamble.permission"))) {
-                sender.sendMessage(Utils.chat(getConfig().getString("gchat.messages.no-perms")));
-                return true;
-            }
-
-            if (args.length == 0) {
-                sender.sendMessage(Utils.chat(getConfig().getString("gchat.messages.invalid-message")));
-                return true;
-            }
-
-            if (args.length > 0) {
-                if (args[0].equalsIgnoreCase("reload") || args[0].equalsIgnoreCase("rl")) {
-                    sender.sendMessage(Utils.chat(this.getConfig().getString("gchat.messages.rrl")));
-                    this.reloadConfig();
-                }
-            }
-
-            return true;
-        }
-        return false;
     }
 
 }

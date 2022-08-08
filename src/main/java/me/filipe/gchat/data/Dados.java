@@ -21,14 +21,6 @@ public class Dados {
     private FileConfiguration dataConfig = null;
     private File configFile = null;
 
-    private static Map<UUID, Boolean> globalEnabled = new HashMap<UUID, Boolean>();
-    private static Map<UUID, Boolean> localEnabled = new HashMap<UUID, Boolean>();
-    private static Map<UUID, Boolean> tellEnabled = new HashMap<UUID, Boolean>();
-
-    //Anúncios
-    private static Map<UUID, Boolean> broadcastEnabled = new HashMap<UUID, Boolean>();
-    private static Map<UUID, Boolean> serverMessages = new HashMap<UUID, Boolean>();
-
     public Dados(GChat plugin) {
         this.plugin = plugin;
 
